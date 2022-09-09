@@ -1,0 +1,25 @@
+body {
+  display: grid;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+#board {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(7,10vmin);
+  grid-template-rows: repeat(6,10vmin);
+  background-color: purple;
+  justify-content: center;
+  align-items: center;
+}
+#board div {
+  border-radius: 50%;
+  margin: 7px;
+  background-color: white;
+  display: grid;
+  height: 80%;
+  width: 80%;
+
+}
