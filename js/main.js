@@ -36,6 +36,7 @@ const winningPlacements = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 let boardEls, turn, winner, winCount
+let correctedPlayer
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -75,6 +76,7 @@ function init(){
   winner = null
   render()
 }
+
 function render(){
   boardEls.forEach(function(element,idx){
     if(boardEls[idx] === 1){
@@ -85,4 +87,12 @@ function render(){
       gridEls[idx].style.backgroundColor = "white"
     }
   });
+  correctedPlayer = turn === 1 ? 1:2
+  if(winner === null){
+    outMsg.innerText = `It is Player ${correctedPlayer}'s Turn`
+  } else if(winner === 'T'){
+    outMsg.innerText = 'It is a Tie. Click Below to Play Again!'
+  } else {
+    outMsg.innerText = `Player ${winner === 1 ? 1:2} has Won! Click Below to Play Again!`
+  }
 }
