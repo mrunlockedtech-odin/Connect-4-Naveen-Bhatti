@@ -34,8 +34,6 @@ const winningPlacement = [
   [14,22,30,38]
 ]
 
-console.log(winningPlacement.length)
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner, winCount
 
@@ -75,6 +73,16 @@ function init(){
   resetButton.setAttribute("hidden",true)
   turn = 1
   winner = null
-  //resetAnimations()
-  //render()
+  render()
+}
+function render(){
+  board.forEach(function(element,idx){
+    if(board[idx] === 1){
+      gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
+    } else if(board[idx] === -1){
+      gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
+    } else {
+      gridEls[idx].style.backgroundColor = "white"
+    }
+  });
 }
