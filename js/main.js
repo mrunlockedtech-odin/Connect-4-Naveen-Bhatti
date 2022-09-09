@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-const winningPlacement = [
+const winningPlacements = [
   //Horizontal Solutions
   [0,1,2,3],[1,2,3,4],[2,3,4,5],[3,4,5,6],
   [7,8,9,10],[8,9,10,11],[9,10,11,12],[10,11,12,13],
@@ -35,7 +35,7 @@ const winningPlacement = [
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board, turn, winner, winCount
+let boardEls, turn, winner, winCount
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -62,7 +62,7 @@ boardEle.addEventListener("click", evt => {
 init()
 
 function init(){
-  board = [
+  boardEls = [
     null,null,null,null,null,null,null,
     null,null,null,null,null,null,null,
     null,null,null,null,null,null,null,
@@ -76,10 +76,10 @@ function init(){
   render()
 }
 function render(){
-  board.forEach(function(element,idx){
-    if(board[idx] === 1){
+  boardEls.forEach(function(element,idx){
+    if(boardEls[idx] === 1){
       gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
-    } else if(board[idx] === -1){
+    } else if(boardEls[idx] === -1){
       gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
     } else {
       gridEls[idx].style.backgroundColor = "white"
