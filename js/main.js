@@ -54,9 +54,7 @@ const outMsg = document.getElementById("msg")
 resetButton.addEventListener("click", evt => {
   console.log(evt.target.id)
 })
-boardEle.addEventListener("click", evt => {
-  console.log(evt.target.id)
-})
+boardEle.addEventListener("click", handleClick)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -95,4 +93,8 @@ function render(){
   } else {
     outMsg.innerText = `Player ${winner === 1 ? 1:2} has Won! Click Below to Play Again!`
   }
+}
+
+function handleClick(clickEvt){
+  console.log(parseInt(clickEvt.target.id.slice(4)))
 }
