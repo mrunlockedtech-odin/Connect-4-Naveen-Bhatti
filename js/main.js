@@ -96,5 +96,13 @@ function render(){
 }
 
 function handleClick(clickEvt){
-  console.log(parseInt(clickEvt.target.id.slice(4)))
+  tileIndex = parseInt(clickEvt.target.id.slice(4))
+  if(boardEls[tileIndex] || winner !== null){
+    return
+  } else{
+    boardEls[tileIndex] = turn
+    turn = turn * -1
+    console.dir(boardEls)
+  }
+  render()
 }
