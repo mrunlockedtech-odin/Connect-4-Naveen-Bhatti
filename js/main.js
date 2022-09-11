@@ -40,7 +40,10 @@ const rowsArr = [
 /*---------------------------- Variables (state) ----------------------------*/
 let boardEls, turn, winner, winCount
 let correctedPlayer
-
+let tileIndex
+let positionTotal
+let clickedIndex
+let iteratingArr
 
 /*------------------------ Cached Element References ------------------------*/
 const resetButton = document.getElementById("reset-button")
@@ -120,7 +123,6 @@ function handleClick(clickEvt) {
 }
 
 function getWinner() {
-  let positionTotal
   winningPlacements.forEach(function (combo) {
     positionTotal = Math.abs(boardEls[combo[0]] + boardEls[combo[1]] + boardEls[combo[2]] + boardEls[combo[3]])
 
@@ -143,9 +145,9 @@ function getWinner() {
 }
 
 function checkRow(evt){
-  let clickedIndex = parseInt(evt.target.id.slice(4))
+  clickedIndex = parseInt(evt.target.id.slice(4))
 
-  let iteratingArr
+
   rowsArr.forEach(function(row,idx){
     if(row.includes(clickedIndex)){
       iteratingArr = rowsArr[idx]
