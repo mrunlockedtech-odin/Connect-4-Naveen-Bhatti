@@ -33,6 +33,9 @@ const winningPlacements = [
   [7, 15, 23, 31], [15, 23, 31, 39],
   [14, 22, 30, 38]
 ]
+const rowsArr = [
+  [0,7,14,21,28,35],[1,8,15,22,29,36],[2,9,16,23,30,37],[3,10,17,24,31,38],[4,11,18,25,32,39],[5,12,19,26,33,40],[6,13,20,27,34,41]
+]
 
 /*---------------------------- Variables (state) ----------------------------*/
 let boardEls, turn, winner, winCount
@@ -136,3 +139,29 @@ function getWinner() {
     return winner
   }
 }
+/*If the index of the clicked spot is within a certain column, the program should check if any spaces lower on that column are occupied.
+If they are, place the piece at the index selected.
+Else, place the piece at the highest index with a value of null within that column
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
