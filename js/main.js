@@ -102,7 +102,16 @@ function handleClick(clickEvt){
   } else{
     boardEls[tileIndex] = turn
     turn = turn * -1
-    console.dir(boardEls)
+    //console.dir(boardEls)
   }
+  getWinner()
   render()
+}
+
+function getWinner(){
+  winningPlacements.forEach(function(combo){
+    let positionTotal = Math.abs(boardEls[combo[0]]+boardEls[combo[1]]+boardEls[combo[2]]+boardEls[combo[3]])
+
+    //console.log(positionTotal,turn === 1 ? "Player 1":"player 2")
+  })
 }
