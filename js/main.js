@@ -101,7 +101,9 @@ function render() {
 }
 
 function handleClick(clickEvt) {
-  tileIndex = parseInt(clickEvt.target.id.slice(4))
+  tileIndex = checkRow(clickEvt)
+  //parseInt(clickEvt.target.id.slice(4))
+ // console.log(tileIndex)
   if (clickEvt.target.classList.value.includes("gridEntry")) {
     if (boardEls[tileIndex] || winner !== null) {
       return
@@ -137,6 +139,25 @@ function getWinner() {
     winner = 'T'
   }else {
     return winner
+  }
+}
+
+function checkRow(evt){
+  let clickedIndex = parseInt(evt.target.id.slice(4))
+
+  let iteratingArr
+  rowsArr.forEach(function(row,idx){
+    if(row.includes(clickedIndex)){
+      iteratingArr = rowsArr[idx]
+    }
+  })
+  for(let i = iteratingArr.length-1; i >= 0;){
+    if(boardEls[iteratingArr[i]] === null){
+      //console.log(iteratingArr[i],i,boardEls)
+      return iteratingArr[i]
+    }else{
+      i = i-1
+    }
   }
 }
 /*If the index of the clicked spot is within a certain column, the program should check if any spaces lower on that column are occupied.
