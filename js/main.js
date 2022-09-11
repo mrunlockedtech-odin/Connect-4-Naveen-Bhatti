@@ -51,9 +51,7 @@ const outMsg = document.getElementById("msg")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-resetButton.addEventListener("click", evt => {
-  console.log(evt.target.id)
-})
+resetButton.addEventListener("click", init)
 boardEle.addEventListener("click", handleClick)
 
 
@@ -73,6 +71,7 @@ function init() {
   turn = 1
   winner = null
   render()
+  console.dir(boardEls)
 }
 
 function render() {
@@ -83,6 +82,7 @@ function render() {
       gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
     } else {
       gridEls[idx].style.backgroundColor = "white"
+      gridEls[idx].style.backgroundImage = ""
     }
   });
   correctedPlayer = turn === 1 ? 1 : 2
@@ -90,8 +90,10 @@ function render() {
     outMsg.innerText = `It is Player ${correctedPlayer}'s Turn`
   } else if (winner === 'T') {
     outMsg.innerText = 'It is a Tie. Click Below to Play Again!'
+    resetButton.removeAttribute('hidden')
   } else {
     outMsg.innerText = `Player ${winner === 1 ? 1 : 2} has Won! Click Below to Play Again!`
+    resetButton.removeAttribute('hidden')
   }
 }
 
@@ -125,7 +127,12 @@ function getWinner() {
         winner = null
       }
     }
-    console.log(winner)
+    //console.log(winner)
     //console.log(positionTotal,turn === 1 ? "Player 1":"player 2")
   })
+  if((boardEls.every(element => element === 1 || element === -1)&& winner === null)){
+    winner = 'T'
+  }else {
+    return winner
+  }
 }
