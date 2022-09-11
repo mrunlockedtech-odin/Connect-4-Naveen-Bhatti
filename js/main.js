@@ -109,9 +109,19 @@ function handleClick(clickEvt){
 }
 
 function getWinner(){
+  let positionTotal
   winningPlacements.forEach(function(combo){
-    let positionTotal = Math.abs(boardEls[combo[0]]+boardEls[combo[1]]+boardEls[combo[2]]+boardEls[combo[3]])
+    positionTotal = Math.abs(boardEls[combo[0]]+boardEls[combo[1]]+boardEls[combo[2]]+boardEls[combo[3]])
 
+    if(winner === null){
+      if(positionTotal === 4){
+        winner = boardEls[combo[0]]
+        return winner
+      }else{
+        winner = null
+      }
+    }
+    console.log(winner)
     //console.log(positionTotal,turn === 1 ? "Player 1":"player 2")
   })
 }
