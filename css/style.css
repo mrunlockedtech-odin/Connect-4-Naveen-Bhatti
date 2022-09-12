@@ -30,12 +30,7 @@ body {
 #reset-button {
   text-align: center;
 }
-img {
-  position:absolute;
-  height: 11vmin;
-  z-index: -1;
-  
-}
+
 .fall {
   animation-name: fall-animation;
   animation-duration: 500ms;
