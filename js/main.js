@@ -105,13 +105,17 @@ function render() {
 
 function handleClick(clickEvt) {
   tileIndex = checkRow(clickEvt)
+  if(tileIndex === undefined){
+    return
+  }
   //parseInt(clickEvt.target.id.slice(4))
- // console.log(tileIndex)
+ //console.log(boardEls[tileIndex])
   if (clickEvt.target.classList.value.includes("gridEntry")) {
-    if (boardEls[tileIndex] || winner !== null) {
+    if (boardEls[tileIndex]|| winner !== null) {
       return
     } else {
       boardEls[tileIndex] = turn
+      console.log(boardEls)
       turn = turn * -1
       //console.dir(boardEls)
     }
@@ -156,6 +160,7 @@ function checkRow(evt){
   for(let i = iteratingArr.length-1; i >= 0;){
     if(boardEls[iteratingArr[i]] === null){
       //console.log(iteratingArr[i],i,boardEls)
+      //console.dir(i)
       return iteratingArr[i]
     }else{
       i = i-1
