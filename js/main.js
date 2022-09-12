@@ -83,9 +83,13 @@ function init() {
 function render() {
   boardEls.forEach(function (element, idx) {
     if (boardEls[idx] === 1) {
+      gridEls[idx].classList.add('fall');
       gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
+
     } else if (boardEls[idx] === -1) {
+      gridEls[idx].classList.add('fall');
       gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
+
     } else {
       gridEls[idx].style.backgroundColor = "white"
       gridEls[idx].style.backgroundImage = ""
