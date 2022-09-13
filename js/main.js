@@ -34,7 +34,7 @@ const winningPlacements = [
   [14, 22, 30, 38]
 ]
 const rowsArr = [
-  [0,7,14,21,28,35],[1,8,15,22,29,36],[2,9,16,23,30,37],[3,10,17,24,31,38],[4,11,18,25,32,39],[5,12,19,26,33,40],[6,13,20,27,34,41]
+  [0, 7, 14, 21, 28, 35], [1, 8, 15, 22, 29, 36], [2, 9, 16, 23, 30, 37], [3, 10, 17, 24, 31, 38], [4, 11, 18, 25, 32, 39], [5, 12, 19, 26, 33, 40], [6, 13, 20, 27, 34, 41]
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -76,8 +76,8 @@ function init() {
   resetButton.setAttribute("hidden", true)
   turn = 1
   winner = null
+  removeAnimations()
   render()
-  console.dir(boardEls)
 }
 
 function render() {
@@ -93,7 +93,6 @@ function render() {
       gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
 
     } else {
-    //  gridEls[idx].style.backgroundColor = "white"
       gridEls[idx].style.backgroundImage = ""
     }
   });
@@ -111,19 +110,16 @@ function render() {
 
 function handleClick(clickEvt) {
   tileIndex = checkRow(clickEvt)
-  if(tileIndex === undefined){
+  if (tileIndex === undefined) {
     return
   }
-  //parseInt(clickEvt.target.id.slice(4))
- //console.log(boardEls[tileIndex])
   if (clickEvt.target.classList.value.includes("gridEntry")) {
-    if (boardEls[tileIndex]|| winner !== null) {
+    if (boardEls[tileIndex] || winner !== null) {
       return
     } else {
       boardEls[tileIndex] = turn
       console.log(boardEls)
       turn = turn * -1
-      //console.dir(boardEls)
     }
     getWinner()
     render()
@@ -144,58 +140,34 @@ function getWinner() {
         winner = null
       }
     }
-    //console.log(winner)
-    //console.log(positionTotal,turn === 1 ? "Player 1":"player 2")
   })
-  if((boardEls.every(element => element === 1 || element === -1)&& winner === null)){
+  if ((boardEls.every(element => element === 1 || element === -1) && winner === null)) {
     winner = 'T'
-  }else {
+  } else {
     return winner
   }
 }
 
-function checkRow(evt){
+function checkRow(evt) {
   clickedIndex = parseInt(evt.target.id.slice(4))
 
 
-  rowsArr.forEach(function(row,idx){
-    if(row.includes(clickedIndex)){
+  rowsArr.forEach(function (row, idx) {
+    if (row.includes(clickedIndex)) {
       iteratingArr = rowsArr[idx]
     }
   })
-  for(let i = iteratingArr.length-1; i >= 0;){
-    if(boardEls[iteratingArr[i]] === null){
-      //console.log(iteratingArr[i],i,boardEls)
-      //console.dir(i)
+  for (let i = iteratingArr.length - 1; i >= 0;) {
+    if (boardEls[iteratingArr[i]] === null) {
       return iteratingArr[i]
-    }else{
-      i = i-1
+    } else {
+      i = i - 1
     }
   }
 }
-/*If the index of the clicked spot is within a certain column, the program should check if any spaces lower on that column are occupied.
-If they are, place the piece at the index selected.
-Else, place the piece at the highest index with a value of null within that column
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+function removeAnimations() {
+  gridEls.forEach(function (square) {
+    square.classList.remove('fall')
+  })
+}

@@ -9,8 +9,8 @@ body {
 #board {
   display: grid;
   width: max-content;
-  grid-template-columns: repeat(7,11vmin);
-  grid-template-rows: repeat(6,11vmin);
+  grid-template-columns: repeat(7, 11vmin);
+  grid-template-rows: repeat(6, 11vmin);
   /* background-color: #007bc3; */
   background-image: url("../assets/images/Board.png");
   background-size: cover;
@@ -18,7 +18,8 @@ body {
   align-items: center;
   border-radius: 5%;
 }
-#board > div {
+
+#board>div {
   border-radius: 50%;
   /* padding: 7%; */
   margin: 12%;
@@ -28,6 +29,7 @@ body {
   /* background-image: url("../assets/images/RedPiece.png");*/
   background-size: cover;
 }
+
 #reset-button {
   margin-top: 20px;
   text-align: center;
@@ -40,11 +42,10 @@ body {
 
 @keyframes fall-animation {
   from {
-      transform: translateY(-500px);
-      
+    transform: translateY(-500px);
   }
+
   to {
-      transform: translateY(0);
-    
+    transform: translateY(0);
   }
 }
