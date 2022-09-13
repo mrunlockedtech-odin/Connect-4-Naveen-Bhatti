@@ -33,7 +33,7 @@ const winningPlacements = [
   [7, 15, 23, 31], [15, 23, 31, 39],
   [14, 22, 30, 38]
 ]
-const rowsArr = [
+const columnsArr = [
   [0, 7, 14, 21, 28, 35], [1, 8, 15, 22, 29, 36], [2, 9, 16, 23, 30, 37], [3, 10, 17, 24, 31, 38], [4, 11, 18, 25, 32, 39], [5, 12, 19, 26, 33, 40], [6, 13, 20, 27, 34, 41]
 ]
 
@@ -53,6 +53,8 @@ const gridEls = document.querySelectorAll(".gridEntry")
 const boardEle = document.querySelector("#board")
 
 const outMsg = document.getElementById("msg")
+
+const documentRoot = document.documentElement
 
 
 
@@ -84,6 +86,7 @@ function render() {
   boardEls.forEach(function (element, idx) {
     if (boardEls[idx] === 1) {
       gridEls[idx].style.zIndex = -1
+
       gridEls[idx].classList.add('fall');
       gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
 
@@ -152,9 +155,9 @@ function checkRow(evt) {
   clickedIndex = parseInt(evt.target.id.slice(4))
 
 
-  rowsArr.forEach(function (row, idx) {
-    if (row.includes(clickedIndex)) {
-      iteratingArr = rowsArr[idx]
+  columnsArr.forEach(function (column, idx) {
+    if (column.includes(clickedIndex)) {
+      iteratingArr = columnsArr[idx]
     }
   })
   for (let i = iteratingArr.length - 1; i >= 0;) {

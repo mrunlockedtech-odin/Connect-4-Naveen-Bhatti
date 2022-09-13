@@ -5,6 +5,9 @@ body {
   text-align: center;
   justify-content: center;
 }
+:root{
+  --transition-distance:0%;
+}
 
 #board {
   display: grid;
