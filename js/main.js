@@ -90,10 +90,9 @@ function render() {
   boardEls.forEach(function (element, idx) {
     if (boardEls[idx] === 1) {
       gridEls[idx].style.zIndex = -1
-
-      gridEls[idx].classList.add('fall');
+      gridEls[idx].classList.add('fall')
       gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
-
+      
     } else if (boardEls[idx] === -1) {
       gridEls[idx].style.zIndex = -1
       gridEls[idx].classList.add('fall');
@@ -125,10 +124,12 @@ function handleClick(clickEvt) {
       return
     } else {
       boardEls[tileIndex] = turn
-      console.log(boardEls)
+      // console.log(boardEls)
       turn = turn * -1
     }
     getWinner()
+   // console.log(tileIndex)
+    setTransitionDist(tileIndex)
     render()
   } else {
     return null
@@ -176,5 +177,13 @@ function checkRow(evt) {
 function removeAnimations() {
   gridEls.forEach(function (square) {
     square.classList.remove('fall')
+  })
+}
+function setTransitionDist(index){
+  rowsArr.forEach(function(row,idx){
+    if(row.includes(index)){
+      documentRoot.style.setProperty('--transition-distance',`-${(idx+2.5)*100}%`)
+      console.log(`-${(idx+2.5)*100}%`,"run",idx)
+    }
   })
 }

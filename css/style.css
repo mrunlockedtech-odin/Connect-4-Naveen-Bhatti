@@ -45,7 +45,7 @@ body {
 
 @keyframes fall-animation {
   from {
-    transform: translateY(-700%);
+    transform: translateY(var(--transition-distance));
   }
 
   to {
