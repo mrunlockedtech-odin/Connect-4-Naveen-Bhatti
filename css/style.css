@@ -37,12 +37,12 @@ body {
 
 .fall {
   animation-name: fall-animation;
-  animation-duration: 1000ms;
+  animation-duration: 3000ms;
 }
 
 @keyframes fall-animation {
   from {
-    transform: translateY(-500px);
+    transform: translateY(-700%);
   }
 
   to {
