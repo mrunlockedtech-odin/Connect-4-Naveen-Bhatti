@@ -129,7 +129,7 @@ function handleClick(clickEvt) {
     }
     getWinner()
    // console.log(tileIndex)
-    setTransitionDist(tileIndex)
+    setTransition(tileIndex)
     render()
   } else {
     return null
@@ -179,11 +179,11 @@ function removeAnimations() {
     square.classList.remove('fall')
   })
 }
-function setTransitionDist(index){
+function setTransition(index){
   rowsArr.forEach(function(row,idx){
     if(row.includes(index)){
-      documentRoot.style.setProperty('--transition-distance',`-${(idx+2.5)*100}%`)
-      console.log(`-${(idx+2.5)*100}%`,"run",idx)
+      documentRoot.style.setProperty('--transition-distance',`-${140+(120*idx)}%`)
+      console.log(`-${140+(120*idx)}%`,"run",idx)
     }
   })
 }

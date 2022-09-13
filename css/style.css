@@ -40,15 +40,18 @@ body {
 
 .fall {
   animation-name: fall-animation;
-  animation-duration: 3000ms;
+  animation-duration: 1500ms;
 }
 
 @keyframes fall-animation {
   from {
     transform: translateY(var(--transition-distance));
   }
-
+  
   to {
     transform: translateY(0);
   }
+}
+h2{
+  margin-bottom: 20%;
 }
