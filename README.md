@@ -9,6 +9,7 @@ The game can be played [here](https://connect4naveen.netlify.app). The game is p
 2. Once you "connect 4", you will be presented with a win message and an option to reset using the button below the board.
 ## Screenshots
 
+
 ## Technologies Used
 
 ## Future Enhancements

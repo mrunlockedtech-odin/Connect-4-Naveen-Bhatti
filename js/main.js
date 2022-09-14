@@ -150,7 +150,7 @@ function getWinner() {
 
 function checkRow(evt) {
   clickedIndex = parseInt(evt.target.id.slice(4))
-  
+
   columnsArr.forEach(function (column, idx) {
     if (column.includes(clickedIndex)) {
       iteratingArr = columnsArr[idx]
@@ -183,5 +183,5 @@ function setTransition(index) {
 function tileDrop(gridElement, index) {
   gridElement.style.zIndex = -1
   gridElement.classList.add('fall')
-  gridElement.style.backgroundImage = boardEls[index] === 1 ? "url('../assets/images/RedPiece2.png')" : "url('../assets/images/YellowPiece2.png')"
+  gridElement.style.backgroundImage = boardEls[index] === 1 ? "url('../assets/images/RedPiece.png')" : "url('../assets/images/YellowPiece.png')"
 }

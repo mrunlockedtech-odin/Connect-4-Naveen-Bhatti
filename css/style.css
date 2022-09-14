@@ -20,7 +20,7 @@ body {
   width: fit-content;
   grid-template-columns: repeat(7, 11vmin);
   grid-template-rows: repeat(6, 11vmin);
-  background-image: url("../assets/images/Board2.png");
+  background-image: url("../assets/images/Board.png");
   background-size: cover;
   justify-content: center;
   align-items: center;
