@@ -5,6 +5,9 @@ body {
   text-align: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  background-image: url("../assets/images/background.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 }
 :root{
   --transition-distance:0%;
@@ -14,7 +17,7 @@ body {
 #board {
   margin: auto;
   display: grid;
-  width: max-content;
+  width: fit-content;
   grid-template-columns: repeat(7, 11vmin);
   grid-template-rows: repeat(6, 11vmin);
   background-image: url("../assets/images/Board2.png");
@@ -22,6 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 5%;
+  grid-area: 3/1/4/2;
 }
 
 #board>div {
@@ -58,7 +62,10 @@ body {
 }
 h2{
   margin-bottom: 15%;
+  color: white;
 }
 h1{
   margin:0;
+  margin-top: 5%;
+  color: white;
 }
