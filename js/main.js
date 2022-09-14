@@ -43,12 +43,8 @@ const rowsArr = [
 const clickSound = new Audio("./assets/audio/click.mp3")
 
 /*---------------------------- Variables (state) ----------------------------*/
-let boardEls, turn, winner, winCount
-let correctedPlayer
-let tileIndex
-let positionTotal
-let clickedIndex
-let iteratingArr
+let boardEls, turn, winner, winCount, correctedPlayer, tileIndex, positionTotal, clickedIndex, iteratingArr
+
 
 /*------------------------ Cached Element References ------------------------*/
 const resetButton = document.getElementById("reset-button")
