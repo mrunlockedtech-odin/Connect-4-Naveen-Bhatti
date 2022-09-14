@@ -8,7 +8,8 @@ The game can be played [here](https://connect4naveen.netlify.app). The game is p
 1. Selecting a piece/slot will cause a piece to drop to the lowest place in the column.
 2. Once you "connect 4", you will be presented with a win message and an option to reset using the button below the board.
 ## Screenshots
-
+![Empty Game Board](assets/images/gameSS2.png)
+#### Empty Game Board
 
 ## Technologies Used
 
