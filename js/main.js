@@ -90,15 +90,11 @@ function init() {
 function render() {
   boardEls.forEach(function (element, idx) {
     if (boardEls[idx] === 1) {
-      gridEls[idx].style.zIndex = -1
-      gridEls[idx].classList.add('fall')
-      gridEls[idx].style.backgroundImage = "url('../assets/images/RedPiece.png')"
+      tileDrop(gridEls[idx],idx)
       clickSound.currentTime = 0
       clickSound.play()
     } else if (boardEls[idx] === -1) {
-      gridEls[idx].style.zIndex = -1
-      gridEls[idx].classList.add('fall');
-      gridEls[idx].style.backgroundImage = "url('../assets/images/YellowPiece.png')"
+      tileDrop(gridEls[idx],idx)
       clickSound.currentTime = 0
       clickSound.play()
     } else {
@@ -127,11 +123,9 @@ function handleClick(clickEvt) {
       return
     } else {
       boardEls[tileIndex] = turn
-      // console.log(boardEls)
       turn = turn * -1
     }
     getWinner()
-   // console.log(tileIndex)
     setTransition(tileIndex)
     render()
   } else {
@@ -188,7 +182,12 @@ function setTransition(index){
     if(row.includes(index)){
       documentRoot.style.setProperty('--transition-distance',`-${140+(120*idx)}%`)
       documentRoot.style.setProperty('--transition-time',`${100+(60*idx)}ms`)
-      console.log(`-${140+(120*idx)}%`,"run",idx)
     }
   })
+}
+
+function tileDrop(gridElement,index){
+  gridElement.style.zIndex = -1
+  gridElement.classList.add('fall')
+  gridElement.style.backgroundImage = boardEls[index] === 1 ?  "url('../assets/images/RedPiece.png')":"url('../assets/images/YellowPiece.png')"
 }
