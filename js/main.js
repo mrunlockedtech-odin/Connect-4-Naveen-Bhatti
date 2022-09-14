@@ -184,5 +184,5 @@ function setTransition(index){
 function tileDrop(gridElement,index){
   gridElement.style.zIndex = -1
   gridElement.classList.add('fall')
-  gridElement.style.backgroundImage = boardEls[index] === 1 ?  "url('../assets/images/RedPiece.png')":"url('../assets/images/YellowPiece.png')"
+  gridElement.style.backgroundImage = boardEls[index] === 1 ?  "url('../assets/images/RedPiece2.png')":"url('../assets/images/YellowPiece2.png')"
 }
