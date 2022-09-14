@@ -43,7 +43,7 @@ const rowsArr = [
 const clickSound = new Audio("./assets/audio/click.mp3")
 
 /*---------------------------- Variables (state) ----------------------------*/
-let boardEls, turn, winner, winCount, correctedPlayer, tileIndex, positionTotal, clickedIndex, iteratingArr
+let boardEls, turn, winner, tileIndex, positionTotal, clickedIndex, iteratingArr
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -97,9 +97,8 @@ function render() {
       gridEls[idx].style.backgroundImage = ""
     }
   });
-  correctedPlayer = turn === 1 ? 1 : 2
   if (winner === null) {
-    outMsg.innerText = `It is Player ${correctedPlayer}'s Turn`
+    outMsg.innerText = `It is Player ${turn === 1 ? 1 : 2}'s Turn`
   } else if (winner === 'T') {
     outMsg.innerText = 'It is a Tie. Click Below to Play Again!'
     resetButton.removeAttribute('hidden')
