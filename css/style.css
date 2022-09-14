@@ -44,6 +44,7 @@ body {
 .fall {
   animation-name: fall-animation;
   animation-duration: var(--transition-time);
+  animation-timing-function:linear
 }
 
 @keyframes fall-animation {
