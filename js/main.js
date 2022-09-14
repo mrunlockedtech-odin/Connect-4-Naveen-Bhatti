@@ -175,7 +175,7 @@ function removeAnimations() {
 function setTransition(index){
   rowsArr.forEach(function(row,idx){
     if(row.includes(index)){
-      documentRoot.style.setProperty('--transition-distance',`-${140+(150*idx)}%`)
+      documentRoot.style.setProperty('--transition-distance',`-${120+(150*idx)}%`)
       documentRoot.style.setProperty('--transition-time',`${100+(70*idx)}ms`)
     }
   })
