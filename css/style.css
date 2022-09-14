@@ -4,6 +4,7 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
+  font-family: 'Montserrat', sans-serif;
 }
 :root{
   --transition-distance:0%;
@@ -11,11 +12,11 @@ body {
 }
 
 #board {
+  margin: auto;
   display: grid;
   width: max-content;
   grid-template-columns: repeat(7, 11vmin);
   grid-template-rows: repeat(6, 11vmin);
-  /* background-color: #007bc3; */
   background-image: url("../assets/images/Board.png");
   background-size: cover;
   justify-content: center;
@@ -25,18 +26,15 @@ body {
 
 #board>div {
   border-radius: 50%;
-  /* padding: 7%; */
   margin: 12%;
   display: grid;
   height: 80%;
   width: 80%;
-  /* background-image: url("../assets/images/RedPiece.png");*/
   background-size: cover;
 }
 
 #reset-button {
   margin-top: 20px;
-  text-align: center;
 }
 
 .fall {
@@ -54,5 +52,8 @@ body {
   }
 }
 h2{
-  margin-bottom: 20%;
+  margin-bottom: 15%;
+}
+h1{
+  margin:0;
 }
