@@ -177,12 +177,14 @@ function checkRow(evt) {
 function removeAnimations() {
   gridEls.forEach(function (square) {
     square.classList.remove('fall')
+    square.style.zIndex = ''
   })
 }
 function setTransition(index){
   rowsArr.forEach(function(row,idx){
     if(row.includes(index)){
       documentRoot.style.setProperty('--transition-distance',`-${140+(120*idx)}%`)
+      documentRoot.style.setProperty('--transition-time',`${100+(60*idx)}ms`)
       console.log(`-${140+(120*idx)}%`,"run",idx)
     }
   })
