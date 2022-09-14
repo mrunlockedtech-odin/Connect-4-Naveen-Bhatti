@@ -38,7 +38,7 @@ const columnsArr = [
 ]
 
 const rowsArr = [
-  [0,1,2,3,4,5,6], [7,8,9,10,11,12,13], [14,15,16,17,18,19,20],[21,22,23,24,25,26,27], [28,29,30,31,32,33,34],[35,36,37,38,39,40,41]
+  [0, 1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12, 13], [14, 15, 16, 17, 18, 19, 20], [21, 22, 23, 24, 25, 26, 27], [28, 29, 30, 31, 32, 33, 34], [35, 36, 37, 38, 39, 40, 41]
 ]
 const clickSound = new Audio("./assets/audio/click.mp3")
 
@@ -86,17 +86,17 @@ function init() {
 function render() {
   boardEls.forEach(function (element, idx) {
     if (boardEls[idx] === 1) {
-      tileDrop(gridEls[idx],idx)
+      tileDrop(gridEls[idx], idx)
       clickSound.currentTime = 0
       clickSound.play()
     } else if (boardEls[idx] === -1) {
-      tileDrop(gridEls[idx],idx)
+      tileDrop(gridEls[idx], idx)
       clickSound.currentTime = 0
       clickSound.play()
     } else {
       gridEls[idx].style.backgroundImage = ""
     }
-  });
+  })
   if (winner === null) {
     outMsg.innerText = `It is Player ${turn === 1 ? 1 : 2}'s Turn`
   } else if (winner === 'T') {
@@ -150,8 +150,7 @@ function getWinner() {
 
 function checkRow(evt) {
   clickedIndex = parseInt(evt.target.id.slice(4))
-
-
+  
   columnsArr.forEach(function (column, idx) {
     if (column.includes(clickedIndex)) {
       iteratingArr = columnsArr[idx]
@@ -172,17 +171,17 @@ function removeAnimations() {
     square.style.zIndex = ''
   })
 }
-function setTransition(index){
-  rowsArr.forEach(function(row,idx){
-    if(row.includes(index)){
-      documentRoot.style.setProperty('--transition-distance',`-${120+(150*idx)}%`)
-      documentRoot.style.setProperty('--transition-time',`${100+(70*idx)}ms`)
+function setTransition(index) {
+  rowsArr.forEach(function (row, idx) {
+    if (row.includes(index)) {
+      documentRoot.style.setProperty('--transition-distance', `-${120 + (150 * idx)}%`)
+      documentRoot.style.setProperty('--transition-time', `${100 + (70 * idx)}ms`)
     }
   })
 }
 
-function tileDrop(gridElement,index){
+function tileDrop(gridElement, index) {
   gridElement.style.zIndex = -1
   gridElement.classList.add('fall')
-  gridElement.style.backgroundImage = boardEls[index] === 1 ?  "url('../assets/images/RedPiece2.png')":"url('../assets/images/YellowPiece2.png')"
+  gridElement.style.backgroundImage = boardEls[index] === 1 ? "url('../assets/images/RedPiece2.png')" : "url('../assets/images/YellowPiece2.png')"
 }
