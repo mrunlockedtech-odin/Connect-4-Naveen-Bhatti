@@ -20,3 +20,6 @@ Within this project, I used HTML, CSS, and Javascript. Below are basic summaries
 - Javascript: Javascript was used to script the various functions for the actual game play as well as setting some of the styling elements dynamically.
 
 ## Future Enhancements
+As for future enhancements, I have a few that are listed below.
+- Change Play Dynamics: Remove the event listeners from the board to above the board, as well as add a hover over each column to display a semi-transparent game piece. This would better emulate a user holding a piece over the game board and dropping it.
+- Art: Improving the art would also be a desired enhancement. The background is my primary concern as the game pieces were styled to look like the originals; however, the board should also be modified.
