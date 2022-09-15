@@ -7,9 +7,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #E6F4F1;
 }
-:root{
-  --transition-distance:0%;
-  --transition-time:0ms
+
+:root {
+  --transition-distance: 0%;
+  --transition-time: 0ms
 }
 
 #board {
@@ -32,7 +33,7 @@ body {
   margin-left: 15.1%;
   display: grid;
   height: 72%;
-  width:72%;
+  width: 72%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -46,24 +47,26 @@ body {
 .fall {
   animation-name: fall-animation;
   animation-duration: var(--transition-time);
-  animation-timing-function:linear
+  animation-timing-function: linear
 }
 
 @keyframes fall-animation {
   from {
     transform: translateY(var(--transition-distance));
   }
-  
+
   to {
     transform: translateY(0);
   }
 }
-h2{
+
+h2 {
   margin-bottom: 15%;
   color: #0070B8;
 }
-h1{
-  margin:0;
+
+h1 {
+  margin: 0;
   margin-top: 5%;
   color: #0070B8;
 }
