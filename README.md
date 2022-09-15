@@ -10,7 +10,13 @@ The game can be played [here](https://connect4naveen.netlify.app). The game is p
 ## Screenshots
 ![Empty Game Board](assets/images/gameSS2.png)
 #### Empty Game Board
+![Game Winning Board](assets/images/gameSS1.png)
+#### Game Winning Board
 
 ## Technologies Used
+Within this project, I used HTML, CSS, and Javascript. Below are basic summaries of how each technology was used:
+- HTML: HTML was used to create the basic elements on the page such as the tiles, headings, and game board.
+- CSS: CSS was used to create the styling and animations of the game elements such as the backgrounds, heading styling, and grid/flexbox.
+- Javascript: Javascript was used to script the various functions for the actual game play as well as setting some of the styling elements dynamically.
 
 ## Future Enhancements
